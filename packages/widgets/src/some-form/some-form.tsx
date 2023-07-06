@@ -1,17 +1,14 @@
-import { Button, Input } from '../../../components/src'
+import { Button, Input } from '@company/components'
+import { useId } from 'react'
 
-import {} from 'next'
+export function SomeForm() {
+  const id = useId()
 
-export type SomeFormProps = {}
-
-export function SomeForm({}: SomeFormProps) {
   return (
     <div>
-      <form>
-        <label>
-          input
-          <Input type="text" />
-        </label>
+      <form name="some-form">
+        <label htmlFor={id}>input</label>
+        <Input id={id} type="text" />
 
         <Button type="submit">Submit</Button>
       </form>

@@ -2,6 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@company/components": ["./packages/components/src"],
+      "@company/widgets": ["./packages/widgets/src"]
+    }
   }
 }

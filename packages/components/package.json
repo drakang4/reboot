@@ -3,8 +3,16 @@
   "version": "0.0.0",
   "description": "> TODO: description",
   "author": "Heeryong Kang <drakang4@gmail.com>",
-  "homepage": "",
   "license": "MIT",
+  "homepage": "https://github.com/drakang4/reboot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drakang4/reboot.git",
+    "directory": "packages/components"
+  },
+  "bugs": {
+    "url": "https://github.com/drakang4/reboot/issues"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -16,7 +24,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "npm run build:es && npm run build:types",
+    "build": "pnpm run build:es && pnpm run build:types",
     "build:es": "swc src -d lib",
     "build:types": "tsc -p tsconfig.build.json",
     "lint:es": "eslint src",
@@ -25,6 +33,6 @@
     "lint:style:fix": "stylelint 'src/**/*.{js,ts,tsx}' --fix",
     "lint:etc": "prettier src --check",
     "lint:etc:fix": "prettier src --write",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules pnpm exec jest"
   }
 }

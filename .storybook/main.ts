@@ -2,26 +2,8 @@ import type { StorybookConfig } from '@storybook/nextjs'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 
 const config: StorybookConfig = {
-  stories: ['../packages/**/!(/lib)/*.stories.@(mdx,js|jsx|ts|tsx)'],
-  addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-links',
-    {
-      name: 'storybook-addon-swc',
-      options: {
-        swcLoaderOptions: {
-          module: {
-            type: 'es6',
-          },
-          jsc: {
-            experimental: {
-              plugins: [['@swc/plugin-styled-components', {}]],
-            },
-          },
-        },
-      },
-    },
-  ],
+  stories: ['../packages/*/src/**/*.stories.@(mdx,js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-links'],
   typescript: {
     reactDocgenTypescriptOptions: {
       tsconfigPath: 'tsconfig.test.json',
@@ -29,7 +11,13 @@ const config: StorybookConfig = {
   },
   framework: {
     name: '@storybook/nextjs',
-    options: {},
+    options: {
+      builder: {
+        useSWC: true,
+        fsCache: true,
+        lazyCompilation: true,
+      },
+    },
   },
   webpackFinal: async (config) => {
     if (config.resolve) {

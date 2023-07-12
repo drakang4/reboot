@@ -19,5 +19,6 @@
     "experimental": {
       "plugins": [["@swc/plugin-styled-components", {}]]
     }
-  }
+  },
+  "exclude": [".*\\.test\\.tsx?", ".*\\.stories\\.tsx?"]
 }

@@ -6,6 +6,7 @@
     "pnpm": ">= 8"
   },
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "scripts": {

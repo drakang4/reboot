@@ -13,13 +13,8 @@
   "bugs": {
     "url": "https://github.com/drakang4/reboot/issues"
   },
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
-    }
-  },
+  "types": "src/index.ts",
+  "main": "src/index.ts",
   "files": [
     "lib"
   ],
@@ -36,6 +31,15 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules pnpm exec jest"
   },
   "dependencies": {
-    "@company/components": "workspace:^"
+    "@company/components": "workspace:^",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-resources-to-backend": "^1.1.4"
+  },
+  "devDependencies": {
+    "i18next": "^23.2.10",
+    "next": "13.4.7",
+    "react": "^18.2.0",
+    "react-i18next": "^13.0.2",
+    "styled-components": "^6.0.2"
   }
 }

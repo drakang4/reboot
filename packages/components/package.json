@@ -13,13 +13,8 @@
   "bugs": {
     "url": "https://github.com/drakang4/reboot/issues"
   },
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
-    }
-  },
+  "types": "src/index.ts",
+  "main": "src/index.ts",
   "files": [
     "lib"
   ],
@@ -34,5 +29,8 @@
     "lint:etc": "prettier src --check",
     "lint:etc:fix": "prettier src --write",
     "test": "NODE_OPTIONS=--experimental-vm-modules pnpm exec jest"
+  },
+  "devDependencies": {
+    "styled-components": "^6.0.2"
   }
 }
